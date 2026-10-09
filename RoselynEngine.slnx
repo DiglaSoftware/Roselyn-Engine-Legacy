@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="RoselynEngine.vcxproj" Id="b5411cd0-870b-460a-b174-d89dfb2ab266" />
+</Solution>
