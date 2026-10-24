@@ -14,12 +14,10 @@ namespace RoselynEngine {
 				DeltaTime = current - LastTime;
 				LastTime = current;
 
-				if (DeltaTime > 0.1) {
-					DeltaTime = 0.1;
-				}
+				if (DeltaTime > 0.1) DeltaTime = 0.1;
 			}
-			static float GetDeltaTime() { return DeltaTime; }
-			static float GetTotalTime() { return LastTime; }
+			static float GetDeltaTime() { return (float)DeltaTime; }
+			static float GetTotalTime() { return (float)LastTime; }
 
 		private:
 			inline static std::chrono::time_point<std::chrono::high_resolution_clock> Start = std::chrono::high_resolution_clock::now();

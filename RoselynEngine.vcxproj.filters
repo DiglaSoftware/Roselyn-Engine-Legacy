@@ -34,32 +34,35 @@
     <Filter Include="Исходные файлы\Roselyn\Core\Time">
       <UniqueIdentifier>{0aa30e0d-6c5e-4924-8e11-0a99d4355375}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Исходные файлы\Roselyn\Camera">
-      <UniqueIdentifier>{8920ec38-9c55-4e98-975f-a3d6d9c91b58}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\Roselyn\Camera\Camera2D">
-      <UniqueIdentifier>{ae332d6a-7575-4633-8426-895009a4ecd5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\Roselyn\Camera\Camera3D">
-      <UniqueIdentifier>{59fefae6-3e13-4f62-b383-4e8d5bf58262}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Исходные файлы\Roselyn\Texture">
       <UniqueIdentifier>{885855b1-9e68-46d0-a00c-a0b7cad17d06}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\Roselyn\Loaders">
-      <UniqueIdentifier>{7694e9f4-d58a-4363-b67e-32741aa3a327}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\Roselyn\Loaders\TGALoader">
-      <UniqueIdentifier>{1f3faa8a-ff9e-40d4-9ee7-e6357d4ebb12}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\Roselyn\TestDrawable">
-      <UniqueIdentifier>{cd50ca2b-9860-4157-a1d2-52c5a11ebcdc}</UniqueIdentifier>
     </Filter>
     <Filter Include="Исходные файлы\Roselyn\StaticMesh">
       <UniqueIdentifier>{3326382e-d444-4bd4-a9d2-1b024bf45984}</UniqueIdentifier>
     </Filter>
     <Filter Include="Исходные файлы\Roselyn\Mesh">
       <UniqueIdentifier>{895cbed9-914d-4ac2-9a31-dd5cc327a1f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\DML">
+      <UniqueIdentifier>{89cb08e4-671c-467e-9746-b6a3137fd7a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Roselyn\AssetWarehouse">
+      <UniqueIdentifier>{6b1e9ad9-ac6d-4c83-8bb3-b3c0c2380d46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Roselyn\Core\Level">
+      <UniqueIdentifier>{e1365cd9-c48e-408b-9f00-1ca887abce4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Roselyn\Core\Camera">
+      <UniqueIdentifier>{8920ec38-9c55-4e98-975f-a3d6d9c91b58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы ресурсов\Loaders">
+      <UniqueIdentifier>{7694e9f4-d58a-4363-b67e-32741aa3a327}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы ресурсов\Loaders\TGALoader">
+      <UniqueIdentifier>{1f3faa8a-ff9e-40d4-9ee7-e6357d4ebb12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Roselyn\Light">
+      <UniqueIdentifier>{d4117ffd-7e6f-46b2-bff1-8a848a0d1b20}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -78,26 +81,29 @@
     <ClCompile Include="InputManager.cpp">
       <Filter>Исходные файлы\Roselyn\Core\InputManager</Filter>
     </ClCompile>
-    <ClCompile Include="Camera2D.cpp">
-      <Filter>Исходные файлы\Roselyn\Camera\Camera2D</Filter>
-    </ClCompile>
-    <ClCompile Include="Camera3D.cpp">
-      <Filter>Исходные файлы\Roselyn\Camera\Camera3D</Filter>
-    </ClCompile>
     <ClCompile Include="Texture.cpp">
       <Filter>Исходные файлы\Roselyn\Texture</Filter>
     </ClCompile>
     <ClCompile Include="TGALoader.cpp">
-      <Filter>Исходные файлы\Roselyn\Loaders\TGALoader</Filter>
-    </ClCompile>
-    <ClCompile Include="TestDrawable.cpp">
-      <Filter>Исходные файлы\Roselyn\TestDrawable</Filter>
+      <Filter>Файлы ресурсов\Loaders\TGALoader</Filter>
     </ClCompile>
     <ClCompile Include="StaticMesh.cpp">
       <Filter>Исходные файлы\Roselyn\StaticMesh</Filter>
     </ClCompile>
     <ClCompile Include="Mesh.cpp">
       <Filter>Исходные файлы\Roselyn\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine.cpp">
+      <Filter>Исходные файлы\Roselyn\Core\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="AssetWarehouse.cpp">
+      <Filter>Исходные файлы\Roselyn\AssetWarehouse</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Исходные файлы\Roselyn\Core\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelManager.cpp">
+      <Filter>Исходные файлы\Roselyn\Core\Level</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -116,29 +122,14 @@
     <ClInclude Include="InputManager.hpp">
       <Filter>Исходные файлы\Roselyn\Core\InputManager</Filter>
     </ClInclude>
-    <ClInclude Include="RoselynObject.hpp">
-      <Filter>Исходные файлы\Roselyn</Filter>
-    </ClInclude>
-    <ClInclude Include="CameraBase.hpp">
-      <Filter>Исходные файлы\Roselyn\Camera</Filter>
-    </ClInclude>
-    <ClInclude Include="Camera2D.hpp">
-      <Filter>Исходные файлы\Roselyn\Camera\Camera2D</Filter>
-    </ClInclude>
     <ClInclude Include="Transform.hpp">
       <Filter>Исходные файлы\Roselyn</Filter>
-    </ClInclude>
-    <ClInclude Include="Camera3D.hpp">
-      <Filter>Исходные файлы\Roselyn\Camera\Camera3D</Filter>
     </ClInclude>
     <ClInclude Include="Texture.hpp">
       <Filter>Исходные файлы\Roselyn\Texture</Filter>
     </ClInclude>
     <ClInclude Include="TGALoader.hpp">
-      <Filter>Исходные файлы\Roselyn\Loaders\TGALoader</Filter>
-    </ClInclude>
-    <ClInclude Include="TestDrawable.hpp">
-      <Filter>Исходные файлы\Roselyn\TestDrawable</Filter>
+      <Filter>Файлы ресурсов\Loaders\TGALoader</Filter>
     </ClInclude>
     <ClInclude Include="Time.hpp">
       <Filter>Исходные файлы\Roselyn\Core\Time</Filter>
@@ -147,20 +138,50 @@
       <Filter>Исходные файлы\Roselyn\StaticMesh</Filter>
     </ClInclude>
     <ClInclude Include="tiny_obj_loader.h">
-      <Filter>Исходные файлы\Roselyn\Loaders</Filter>
+      <Filter>Файлы ресурсов\Loaders</Filter>
     </ClInclude>
     <ClInclude Include="Mesh.hpp">
       <Filter>Исходные файлы\Roselyn\Mesh</Filter>
     </ClInclude>
     <ClInclude Include="stb_image.h">
-      <Filter>Исходные файлы\Roselyn\Loaders</Filter>
+      <Filter>Файлы ресурсов\Loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="DML.hpp">
+      <Filter>Исходные файлы\DML</Filter>
+    </ClInclude>
+    <ClInclude Include="AssetWarehouse.hpp">
+      <Filter>Исходные файлы\Roselyn\AssetWarehouse</Filter>
+    </ClInclude>
+    <ClInclude Include="Level.hpp">
+      <Filter>Исходные файлы\Roselyn\Core\Level</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.hpp">
+      <Filter>Исходные файлы\Roselyn\Core\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="RoselynObject.hpp">
+      <Filter>Исходные файлы\Roselyn\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelManager.hpp">
+      <Filter>Исходные файлы\Roselyn\Core\Level</Filter>
+    </ClInclude>
+    <ClInclude Include="TestPlayer.hpp">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="Light.hpp">
+      <Filter>Исходные файлы\Roselyn\Light</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="default.frag">
+    <None Include="Engine\unlit.frag">
       <Filter>Исходные файлы\Roselyn\Core</Filter>
     </None>
-    <None Include="default.vert">
+    <None Include="Engine\unlit.vert">
+      <Filter>Исходные файлы\Roselyn\Core</Filter>
+    </None>
+    <None Include="Engine\lit.frag">
+      <Filter>Исходные файлы\Roselyn\Core</Filter>
+    </None>
+    <None Include="Engine\lit.vert">
       <Filter>Исходные файлы\Roselyn\Core</Filter>
     </None>
   </ItemGroup>

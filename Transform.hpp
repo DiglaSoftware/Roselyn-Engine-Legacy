@@ -44,6 +44,42 @@ namespace RoselynEngine {
 			Position.y += delta.y;
 			Position.z += delta.z;
 		}
+
+		Vector3f GetForwardVector() {
+			glm::vec3 Forward;
+			Forward.x = cos(glm::radians(Rotation.y)) * cos(glm::radians(Rotation.z));
+			Forward.y = sin(glm::radians(Rotation.z));
+			Forward.z = sin(glm::radians(Rotation.y)) * cos(glm::radians(Rotation.z));
+			Forward = glm::normalize(Forward);
+
+			return { Forward.x, Forward.y, Forward.z };
+		}
+
+		Vector3f GetRightVector() {
+			glm::vec3 Forward;
+			Forward.x = cos(glm::radians(Rotation.y)) * cos(glm::radians(Rotation.z));
+			Forward.y = sin(glm::radians(Rotation.z));
+			Forward.z = sin(glm::radians(Rotation.y)) * cos(glm::radians(Rotation.z));
+			Forward = glm::normalize(Forward);
+
+			glm::vec3 Right = glm::normalize(glm::cross(Forward, glm::vec3(0.0f, 1.0f, 0.0f)));
+			
+			return { Right.x, Right.y, Right.z };
+		}
+
+		Vector3f GetUpVector() {
+			glm::vec3 Forward;
+			Forward.x = cos(glm::radians(Rotation.y)) * cos(glm::radians(Rotation.z));
+			Forward.y = sin(glm::radians(Rotation.z));
+			Forward.z = sin(glm::radians(Rotation.y)) * cos(glm::radians(Rotation.z));
+			Forward = glm::normalize(Forward);
+
+			glm::vec3 Right = glm::normalize(glm::cross(Forward, glm::vec3(0.0f, 1.0f, 0.0f)));
+
+			glm::vec3 Up = glm::normalize(glm::cross(Right, Forward));
+
+			return { Up.x, Up.y, Up.z };
+		}
 	};
 
 	struct Transform2D {

@@ -2,28 +2,32 @@
 #define STATIC_MESH_HPP
 
 #include "RoselynObject.hpp"
-#include "ShaderWorker.hpp"
+#include <string>
 #include "Texture.hpp"
 #include "Mesh.hpp"
-#include <string>
-#include <glm/glm.hpp>
-#include <vector>
 
 namespace RoselynEngine {
+	enum ShaderType {
+		Unlit,
+		Lit
+	};
+
 	class StaticMesh : public RoselynObject {
 		public:
 			StaticMesh();
+			StaticMesh(std::string meshName, std::string textureName);
 			~StaticMesh();
 
 			void Draw() override;
+			void Tick() override;
 
-			void SetShaderWorker(ShaderWorker &shaderWorker);
-			void SetTexture(Texture &texture);
-			void SetMesh(Mesh &mesh);
+			void SetTexture(std::string textureName);
+			void SetMesh(std::string meshName);
+			void SetShader(ShaderType shaderType);
 		private:
-			ShaderWorker* MeshShaderWorker = nullptr; // mesh material
 			Texture* MeshTexture = nullptr;
 			Mesh* ObjectMesh = nullptr;
+			ShaderType CurrentShader = Unlit;
 	};
 }
 

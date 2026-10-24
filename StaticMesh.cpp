@@ -1,12 +1,16 @@
 #include "StaticMesh.hpp"
-#include "ShaderWorker.hpp"
-#include "Texture.hpp"
-#include "Mesh.hpp"
+#include "AssetWarehouse.hpp"
+#include "Engine.hpp"
 #include <glad/glad.h>
 
 namespace RoselynEngine {
 	StaticMesh::StaticMesh() {
 		
+	}
+
+	StaticMesh::StaticMesh(std::string meshName, std::string textureName) {
+		this->ObjectMesh = AssetWarehouse::GetMesh(meshName);
+		this->MeshTexture = AssetWarehouse::GetTexture(textureName);
 	}
 
 	StaticMesh::~StaticMesh() {
@@ -17,19 +21,25 @@ namespace RoselynEngine {
 		if (this->MeshTexture != nullptr)
 			this->MeshTexture->Use();
 
-		ObjectMesh->Use();
+		if (this->ObjectMesh != nullptr)
+			this->ObjectMesh->Draw();
+
 		glBindTexture(GL_TEXTURE_2D, 0);
 	}
 
-	void StaticMesh::SetShaderWorker(ShaderWorker &shaderWorker) {
-		this->MeshShaderWorker = new ShaderWorker(shaderWorker);
+	void StaticMesh::Tick() { }
+
+	void StaticMesh::SetTexture(std::string textureName) {
+		if (AssetWarehouse::IsTextureLoaded(textureName))
+			this->MeshTexture = AssetWarehouse::GetTexture(textureName);
 	}
 
-	void StaticMesh::SetTexture(Texture &texture) {
-		this->MeshTexture = new Texture(texture);
+	void StaticMesh::SetMesh(std::string meshName) {
+		if (AssetWarehouse::IsMeshLoaded(meshName))
+			this->ObjectMesh = AssetWarehouse::GetMesh(meshName);
 	}
 
-	void StaticMesh::SetMesh(Mesh &mesh) {
-		this->ObjectMesh = new Mesh(mesh);
+	void StaticMesh::SetShader(ShaderType shader) {
+		this->CurrentShader = shader;
 	}
 }
