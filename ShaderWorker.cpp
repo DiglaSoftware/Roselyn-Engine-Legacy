@@ -3,9 +3,10 @@
 #include <fstream>
 #include <glad/glad.h>
 #include <glm/gtc/type_ptr.hpp>
+//#include "ShaderSource.hpp"
 
 namespace RoselynEngine {
-	ShaderWorker::ShaderWorker(const std::string& vertexShaderFile, const std::string& fragmentShaderFile, bool compile) {
+	ShaderWorker::ShaderWorker(const std::string& vertexShaderFile, const std::string& fragmentShaderFile) {
 		std::string VertexShaderSource = "";
 		std::string FragmentShaderSource = "";
 
@@ -36,24 +37,14 @@ namespace RoselynEngine {
 		}
 		FragmentShaderFile.close();
 		
-		this->VertexShaderCode = VertexShaderSource.c_str();
-		this->FragmentShaderCode = FragmentShaderSource.c_str();
+		const char* VertexShaderCode = VertexShaderSource.c_str();
+		const char* FragmentShaderCode = FragmentShaderSource.c_str();
 
-		if (!compile) return; // exit if compilation is deferred
-
-		CompileShaders();
-	}
-
-	ShaderWorker::~ShaderWorker() {
-		glDeleteProgram(this->ShaderProgram);
-	}
-
-	void ShaderWorker::CompileShaders() {
 		int Success;
 		char InfoLog[512];
 
 		unsigned int VertexShader = glCreateShader(GL_VERTEX_SHADER);
-		glShaderSource(VertexShader, 1, &this->VertexShaderCode, NULL);
+		glShaderSource(VertexShader, 1, &VertexShaderCode, NULL);
 		glCompileShader(VertexShader);
 		glGetShaderiv(VertexShader, GL_COMPILE_STATUS, &Success);
 		if (!Success) {
@@ -62,7 +53,7 @@ namespace RoselynEngine {
 		}
 
 		unsigned int FragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-		glShaderSource(FragmentShader, 1, &this->FragmentShaderCode, NULL);
+		glShaderSource(FragmentShader, 1, &FragmentShaderCode, NULL);
 		glCompileShader(FragmentShader);
 		glGetShaderiv(FragmentShader, GL_COMPILE_STATUS, &Success);
 		if (!Success) {
@@ -84,6 +75,22 @@ namespace RoselynEngine {
 
 		glDeleteShader(VertexShader);
 		glDeleteShader(FragmentShader);
+	}
+
+	//ShaderWorker::ShaderWorker(const StandartShaders standartShader) {
+	//	switch (standartShader) {
+	//		case StandartShaders::Unlit:
+	//			
+	//			break;
+	//		default:
+	//			std::cout << "ROSELYN::SHADER_WORKER | Unresolved standart shader failure" << std::endl;
+	//			break;
+	//	}
+	//}
+
+	ShaderWorker::~ShaderWorker() {
+		glDeleteProgram(this->ShaderProgram);
+		std::cout << "ROSELYN::SHADER_WORKER | Shader program deleted" << std::endl;
 	}
 
 	unsigned int ShaderWorker::GetNative() {

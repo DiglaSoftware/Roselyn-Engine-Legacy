@@ -5,12 +5,13 @@
 #include <glm/glm.hpp>
 
 namespace RoselynEngine {
+	//enum StandartShaders { Unlit, Lit };
+	
 	class ShaderWorker {
 		public:
-			ShaderWorker(const std::string& vertexShaderFile, const std::string& fragmentShaderFile, bool compile);
+			ShaderWorker(const std::string& vertexShaderFile, const std::string& fragmentShaderFile);
+			//ShaderWorker(const StandartShaders standartShader);
 			~ShaderWorker();
-
-			void CompileShaders();
 
 			void Use();
 
@@ -24,10 +25,7 @@ namespace RoselynEngine {
 			unsigned int GetNative();
 
 		private:
-			const char* VertexShaderCode;
-			const char* FragmentShaderCode;
-			unsigned int ShaderProgram;
-
+			unsigned int ShaderProgram = 0;
 	};
 }
 

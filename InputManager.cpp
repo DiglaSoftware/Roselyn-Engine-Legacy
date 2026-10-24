@@ -2,8 +2,8 @@
 
 namespace RoselynEngine {
 	GLFWwindow* InputManager::Window = nullptr;
-	std::unordered_map<int, bool> InputManager::KeyStates{};
-	std::unordered_map<int, bool> InputManager::MouseButtonStates{};
+	std::unordered_map<int, bool> InputManager::KeyStates = {};
+	std::unordered_map<int, bool> InputManager::MouseButtonStates = {};
 	glm::vec2 InputManager::LastMousePosition = glm::vec2(0.0f);
 	glm::vec2 InputManager::MouseDelta = glm::vec2(0.0f);
 	glm::vec2 InputManager::ScrollDelta = glm::vec2(0.0f);

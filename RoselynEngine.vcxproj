@@ -144,31 +144,35 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Camera2D.cpp" />
-    <ClCompile Include="Camera3D.cpp" />
+    <ClCompile Include="AssetWarehouse.cpp" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Engine.cpp" />
     <ClCompile Include="glad.c" />
     <ClCompile Include="InputManager.cpp" />
+    <ClCompile Include="LevelManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="ShaderWorker.cpp" />
     <ClCompile Include="StaticMesh.cpp" />
-    <ClCompile Include="TestDrawable.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TGALoader.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Camera2D.hpp" />
-    <ClInclude Include="Camera3D.hpp" />
-    <ClInclude Include="CameraBase.hpp" />
+    <ClInclude Include="AssetWarehouse.hpp" />
+    <ClInclude Include="Camera.hpp" />
+    <ClInclude Include="DML.hpp" />
     <ClInclude Include="Engine.hpp" />
     <ClInclude Include="InputManager.hpp" />
+    <ClInclude Include="Level.hpp" />
+    <ClInclude Include="LevelManager.hpp" />
+    <ClInclude Include="Light.hpp" />
     <ClInclude Include="Mesh.hpp" />
     <ClInclude Include="RoselynObject.hpp" />
     <ClInclude Include="ShaderWorker.hpp" />
     <ClInclude Include="StaticMesh.hpp" />
     <ClInclude Include="stb_image.h" />
-    <ClInclude Include="TestDrawable.hpp" />
+    <ClInclude Include="TestPlayer.hpp" />
     <ClInclude Include="Texture.hpp" />
     <ClInclude Include="TGALoader.hpp" />
     <ClInclude Include="Time.hpp" />
@@ -178,8 +182,10 @@
     <ClInclude Include="Window.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="default.frag" />
-    <None Include="default.vert" />
+    <None Include="Engine\lit.frag" />
+    <None Include="Engine\lit.vert" />
+    <None Include="Engine\unlit.frag" />
+    <None Include="Engine\unlit.vert" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

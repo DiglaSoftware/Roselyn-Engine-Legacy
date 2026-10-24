@@ -9,6 +9,7 @@ namespace RoselynEngine {
 	struct Vertex {
 		glm::vec3 Position;
 		glm::vec2 TexCoords;
+		glm::vec3 Normal;
 
 		bool operator<(const Vertex& o) const {
 			if (Position.x != o.Position.x) return Position.x < o.Position.x;
@@ -24,7 +25,7 @@ namespace RoselynEngine {
 			Mesh(const std::string &objFilePath);
 			~Mesh();
 
-			void Use();
+			void Draw();
 
 		private:
 			std::vector<Vertex> Vertices;

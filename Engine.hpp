@@ -2,16 +2,21 @@
 #define ENGINE_Hpp
 
 #include "Window.hpp"
+#include "ShaderWorker.hpp"
 
 namespace RoselynEngine {
 	class Engine {
 		public:
-			void Init();
-			void Shutdown();
-			void Run();
-			void LoadLevel();
+			static void Init();
+			static void Run();
+			static void Shutdown();
+			static void Quit();
+			static Window* GetWindow();
 		private:
-			Window* window;
+			static bool Inited;
+			static Window* GameWindow;
+			static ShaderWorker* UnlitShaderWorker;
+			static ShaderWorker* LitShaderWorker;
 	};
 }
 

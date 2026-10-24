@@ -7,8 +7,8 @@ namespace RoselynEngine {
 	class Texture {
 		public:
 			Texture();
-			//Texture(const std::string &filePath);
-			//Texture(const Texture &other);
+			Texture(const std::string &filePath);
+			~Texture();
 			void LoadFromFile(const std::string &filePath);
 			void Use();
 		private:
